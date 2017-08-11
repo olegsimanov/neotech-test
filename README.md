@@ -34,6 +34,6 @@ JavaScript
 In order to run integration tests you 
 running integration tests:
 
-```bash mvn integration-test -Pintegration -Dphantomjs.binary="${PATH_TO_PHANTOMJS_BINARY}"```
+```mvn integration-test -Pintegration -Dphantomjs.binary="${PATH_TO_PHANTOMJS_BINARY}"```
 
 where PATH_TO_PHANTOMJS_BINARY could be: /usr/local/Cellar/phantomjs/2.1.1/bin/phantomjs
