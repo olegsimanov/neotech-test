@@ -1,0 +1,75 @@
+div.container {
+    width:  300px;
+    height: 100px;
+
+    position: absolute;
+    top:        0;
+    bottom:     0;
+    left:       0;
+    right:      0;
+
+    margin: auto;
+}
+
+#header {
+    position: relative;
+    top:        0;
+    bottom:     0;
+    left:       0;
+    right:      0;
+    height:     20px;
+    width:      300px;
+    /*border:     1px solid;*/
+}
+#input {
+    position: relative;
+    top:        0;
+    bottom:     0;
+    left:       0;
+    right:      0;
+    height:     20px;
+    width:      300px;
+    /*border: 1px solid;*/
+}
+#button {
+    position: relative;
+    top:        0;
+    bottom:     0;
+    left:       0;
+    right:      0;
+    height:     20px;
+    width:      300px;
+    /*border: 1px solid;*/
+}
+#output {
+    position: relative;
+    top:        0;
+    bottom:     0;
+    left:       0;
+    right:      0;
+    height:     20px;
+    width:      300px;
+    /*border: 1px solid;*/
+}
+#info {
+    display:    block;
+    text-align: center;
+    height:     100%;
+    width:      100%;
+}
+#phoneNumber {
+    text-align: center;
+    height:     100%;
+    width:      100%;
+}
+#determine {
+    height:     100%;
+    width:      100%;
+}
+#console {
+    display:    block;
+    text-align: center;
+    height:     100%;
+    width:      100%;
+}
+

@@ -1,0 +1,19 @@
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div id="header"><label id="info">Determine country by phone number:</label></div>
+        <div id="input"><input title="Enter a phone number" id="phoneNumber" onkeypress="if (event.keyCode === 13) { event.preventDefault(); sendToService(); }"/></div>
+        <div id="button"><button id="determine" onclick="sendToService()">Determine!</button></div>
+        <div id="output"><label id="console"></label></div>
+    </div>
+
+</body>
+
+</html>
