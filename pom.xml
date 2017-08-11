@@ -21,10 +21,6 @@
         <unit-tests.skip>false</unit-tests.skip>
         <integration-tests.skip>true</integration-tests.skip>
 
-        <phantomjs.binary>/usr/local/Cellar/phantomjs/2.1.1/bin/phantomjs</phantomjs.binary>
-
-        <bower-components>${basedir}/src/main/resources/static/bower_components</bower-components>
-
     </properties>
 
 

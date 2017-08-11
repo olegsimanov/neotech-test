@@ -7,8 +7,10 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-import static neotech.services.CountryDetector.CountryDetectorResponse.EMPTY_PHONE_NUMBER;
+import static neotech.services.CountryDetector.CountryDetectorResponse.INVALID_PHONE_NUMBER;
 import static neotech.services.CountryDetector.CountryDetectorResponse.NOT_FOUND;
 
 @Component("TreeCountryDetector")
@@ -82,17 +84,10 @@ public class TreeCountryDetector implements CountryDetector {
 
     @Override
     public CountryDetectorResponse getCountry(String phoneNumber) {
-        if (phoneNumber.trim().isEmpty()) {
-            return EMPTY_PHONE_NUMBER;
-        } else if (phoneNumber.startsWith("+")) {
-            return getCountryByUnprefixedPhoneNumber(phoneNumber.substring(1, phoneNumber.length()));
-        } else {
-            return getCountryByUnprefixedPhoneNumber(phoneNumber);
+        if (!isValidPhoneNumber(phoneNumber.trim())) {
+            return INVALID_PHONE_NUMBER;
         }
-    }
-
-    private CountryDetectorResponse getCountryByUnprefixedPhoneNumber(String unprefixedPhoneNumber) {
-        List<String> countryIdentifier = root.getIdentifier(unprefixedPhoneNumber);
+        List<String> countryIdentifier = root.getIdentifier(phoneNumber.substring(1, phoneNumber.length()));
         if (countryIdentifier.isEmpty()) {
             return NOT_FOUND;
         } else {
@@ -100,5 +95,11 @@ public class TreeCountryDetector implements CountryDetector {
         }
     }
 
+    boolean isValidPhoneNumber(String phoneNumber) {
+        String pattern = "^\\+[0-9]{10,}";
+        Pattern r = Pattern.compile(pattern);
+        Matcher m = r.matcher(phoneNumber);
+        return m.find();
+    }
 
 }

@@ -10,8 +10,8 @@ public interface CountryDetector {
 
     final class CountryDetectorResponse {
 
+        public static final CountryDetectorResponse INVALID_PHONE_NUMBER    = new CountryDetectorResponse("Invalid phone number. Should be like: +1234567890");
         public static final CountryDetectorResponse NOT_FOUND               = new CountryDetectorResponse("Not Found");
-        public static final CountryDetectorResponse EMPTY_PHONE_NUMBER      = new CountryDetectorResponse("Empty phone number");
 
         private String errorMessage;
         private List<String> names = Collections.emptyList();
